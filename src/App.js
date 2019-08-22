@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import MoviesContextProvider from './MoviesContext'
 import './App.css';
+import {movies} from './data'
+import MoviesList from './MoviesList';
+
 
 function App() {
+  console.log(movies)
   return (
-    <div className="App">
+    <MoviesContextProvider>
+  <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
+       movies
       </header>
     </div>
+    <MoviesList/>
+    </MoviesContextProvider>
+    
   );
 }
 
